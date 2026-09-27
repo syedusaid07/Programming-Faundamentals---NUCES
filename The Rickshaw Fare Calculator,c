@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main()
+{
+    float distance, fare = 0.0;
+    int hour;
+
+    printf("Enter hours of the day (0-23):  ");
+    scanf("%d", &hour);
+    printf("Enter distance you travelled:  ");
+    scanf("%f", &distance);
+
+    if (distance <= 0)
+    {
+     printf("Invalid Distance! ");
+     return 1;    
+    } 
+    if (distance <= 1) 
+    {
+     fare = 50.00;
+    } 
+    if(hour < 6 || hour > 22)
+    {
+        fare = fare + 40;
+    }
+    if(distance > 1)
+    {
+        fare = fare +( distance - 1) * 22;
+    }
+
+    printf(" Total cost is %.2f Rs", fare);
+
+ return 0;
+}
